@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+    <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    </head>
+    <body id="page-top" class="index">
+            <!-- Header -->
+            <!-- Navigation -->
+            <nav id="mainNav" style="background: #005E67" class="navbar navbar-fixed-top navbar-custom">
+                <div class="container">
+
+                    <div class="navbar-header page-scroll">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span> Menu
+                        </button>
+                        <a class="navbar-brand">WeatherApp</a>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="hidden">
+                                <a href="#page-top"></a>
+                            </li>
+                            <li>
+                                <a>About</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+
+            <header>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Individual page code -->
+            {% block content %}
+            {% endblock %}
+
+            <!-- Footer -->
+            <footer class="text-center">
+                <div class="footer-above">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-4" style="padding-top:25px">
+                                <h3>Social media</h3>
+                                <ul class="list-inline">
+                                    <li>
+                                        <a href="#" class="btn-social"><i class="facebook"></i><img src="{% static 'main/images/facebook.png' %}" width="30" height="30" alt="WeatherApp"/></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="btn-social"><i class="instagram"></i><img src="{% static 'main/images/instagram.png' %}" width="30" height="30" alt="WeatherApp"/></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="btn-social"><i class="twitter"></i><img src="{% static 'main/images/twitter.png' %}" width="30" height="30" alt="WeatherApp"/></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="btn-social"><i class="linkedin"></i><img src="{% static 'main/images/linkedin.png' %}" width="30" height="30" alt="WeatherApp"/></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="btn-social"><i class="youtube"></i><img src="{% static 'main/images/youtube.png' %}" width="30" height="30" alt="WeatherApp"/></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-below">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                Copyright &copy; WeatherApp 2017
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+                <a class="btn btn-primary" href="#page-top">
+                    <i class="fa fa-chevron-up"></i>
+                </a>
+            </div>
+
+        </body>
+
+</html>

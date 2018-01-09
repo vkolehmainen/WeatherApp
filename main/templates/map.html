@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <html>
+    <head>
+      <title>Simple Map</title>
+      <meta name="viewport" content="initial-scale=1.0">
+      <meta charset="utf-8">
+      <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+          height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+          height: 90%;
+          margin: 0;
+          padding: 0;
+        }
+      </style>
+    </head>
+    <body>
+    <div>
+                  <h2>Observation</h2>
+                  <hr class="star-light">
+                  <form id="game_form" method="post" action="" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in observationform %}
+                      <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                          <label>{{ field.label }}</label>
+                          {{ field }}
+                        </div>
+                      </div>
+                    {% endfor %}
+
+                    <div id="success"></div>
+                    <div class="row">
+                        <div class="form-group col-xs-12">
+                            <button type="submit" class="btn btn-success2">Submit your observation</button>
+                        </div>
+                    </div>
+                  </form>
+                  <hr class="star-light">
+      </div>
+
+
+      <div id="map"></div>
+      <script>
+          var map;
+          function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+              center: {lat: 0, lng: 0},
+              zoom: 2
+            });
+          }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4EHTWfXyJzkYX5HNMziK5C3tl3VFt-gU&callback=initMap" async defer></script>
+    </body>
+  </html>
+{% endblock %}
