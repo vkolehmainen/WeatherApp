@@ -1,12 +1,10 @@
 from django.shortcuts import render
+from django.contrib import messages
 from main.forms import ObservationForm
-
-def map(request):
-    return render(request, 'map.html')
+from main.models import Observation
 
 def map(request):
     if request.method == 'POST':
-
         observationform = ObservationForm(data=request.POST)
 
         if observationform.is_valid():
@@ -20,6 +18,8 @@ def map(request):
     else:
         observationform = ObservationForm()
 
+    observations = Observation.objects.all()
+
     return render(request,
-            'map.html',
-            {'observationform': observationform})
+            'map.html', {'observationform': observationform,
+                         'observations' : observations})
