@@ -8,13 +8,15 @@ class ObservationForm(forms.ModelForm):
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'form-control'
 
-    temperature = forms.FloatField(min_value=0.0)
+    temperature = forms.FloatField(min_value=-100.0, max_value=100)
+    time = forms.DateTimeField(input_formats = ['%m/%d/%Y %H:%M'])
 
     class Meta:
         model = Observation
-        fields = ('city', 'temperature', 'time')
+        fields = ('city', 'time', 'temperature', 'weather_type')
         labels = {
             'city': 'City',
-            'temperature': 'Temperature',
-            'time': 'Time'
+            'time': 'Time',
+            'temperature': 'Temperature (Celsius)',
+            'weather_type' : 'Weather type'
         }
